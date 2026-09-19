@@ -1,0 +1,1754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Segiru Shoe Store | Step Into Style</title>
+
+  <meta name="description" content="Segiru Shoe Store - Premium footwear for every occasion. Discover stylish sneakers, formal shoes, sandals and more.">
+
+  <style>
+    /* =========================
+       GLOBAL STYLES
+    ========================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #171717;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .navbar {
+      height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: #e63946;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 15px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #e63946;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .cart-btn {
+      position: relative;
+      border: none;
+      background: #f5f5f5;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      font-size: 18px;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -4px;
+      right: -3px;
+      background: #e63946;
+      color: white;
+      width: 20px;
+      height: 20px;
+      font-size: 11px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+    }
+
+    .menu-btn {
+      display: none;
+      border: none;
+      background: none;
+      font-size: 26px;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: 650px;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.78), rgba(0,0,0,.20)),
+        url("https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1800&q=90")
+        center/cover no-repeat;
+
+      display: flex;
+      align-items: center;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 650px;
+    }
+
+    .hero-label {
+      display: inline-block;
+      background: #e63946;
+      padding: 7px 15px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 7vw, 82px);
+      line-height: 0.98;
+      letter-spacing: -4px;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 520px;
+      color: #eeeeee;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 25px;
+      border-radius: 7px;
+      font-weight: bold;
+      border: none;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #e63946;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #c92534;
+      transform: translateY(-2px);
+    }
+
+    .btn-light {
+      background: white;
+      color: #171717;
+    }
+
+    .btn-light:hover {
+      background: #eeeeee;
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       FEATURES
+    ========================== */
+
+    .features {
+      padding: 35px 0;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .feature-icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: #fff0f1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .feature h4 {
+      font-size: 15px;
+    }
+
+    .feature p {
+      font-size: 12px;
+      color: #777;
+    }
+
+    /* =========================
+       SECTION HEADER
+    ========================== */
+
+    .section {
+      padding: 90px 0;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 40px;
+      gap: 20px;
+    }
+
+    .section-header h2 {
+      font-size: 38px;
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+
+    .section-header p {
+      color: #777;
+      max-width: 500px;
+    }
+
+    /* =========================
+       CATEGORIES
+    ========================== */
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .category {
+      position: relative;
+      height: 300px;
+      border-radius: 15px;
+      overflow: hidden;
+      color: white;
+    }
+
+    .category img {
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+
+    .category:hover img {
+      transform: scale(1.08);
+    }
+
+    .category-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,.8));
+      display: flex;
+      align-items: end;
+      padding: 25px;
+    }
+
+    .category h3 {
+      font-size: 24px;
+    }
+
+    /* =========================
+       PRODUCTS
+    ========================== */
+
+    .products {
+      background: #f8f8f8;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: 0.3s;
+      border: 1px solid #eeeeee;
+    }
+
+    .product-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 15px 35px rgba(0,0,0,.08);
+    }
+
+    .product-image {
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+      background: #f4f4f4;
+    }
+
+    .product-image img {
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+
+    .badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #e63946;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: bold;
+    }
+
+    .product-info {
+      padding: 18px;
+    }
+
+    .product-category {
+      color: #999;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .product-info h3 {
+      font-size: 17px;
+      margin: 5px 0;
+    }
+
+    .rating {
+      color: #f4a261;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .product-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .price {
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .add-cart {
+      background: #171717;
+      color: white;
+      border: none;
+      padding: 9px 13px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .add-cart:hover {
+      background: #e63946;
+    }
+
+    /* =========================
+       PROMO
+    ========================== */
+
+    .promo {
+      margin: 0 auto 90px;
+      width: 90%;
+      max-width: 1200px;
+      min-height: 380px;
+      border-radius: 20px;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.85), rgba(0,0,0,.15)),
+        url("https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=1600&q=90")
+        center/cover;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 60px;
+    }
+
+    .promo-content {
+      max-width: 550px;
+    }
+
+    .promo h2 {
+      font-size: 45px;
+      line-height: 1.05;
+      margin-bottom: 15px;
+    }
+
+    .promo p {
+      color: #ddd;
+      margin-bottom: 25px;
+    }
+
+    /* =========================
+       NEWSLETTER
+    ========================== */
+
+    .newsletter {
+      background: #171717;
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .newsletter h2 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .newsletter p {
+      color: #aaa;
+      margin-bottom: 25px;
+    }
+
+    .newsletter-form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      background: white;
+      border-radius: 7px;
+      overflow: hidden;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 15px;
+      font-size: 14px;
+    }
+
+    .newsletter-form button {
+      border: none;
+      background: #e63946;
+      color: white;
+      padding: 0 22px;
+      font-weight: bold;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #101010;
+      color: white;
+      padding: 60px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 50px;
+      margin-bottom: 50px;
+    }
+
+    .footer-brand p {
+      color: #888;
+      max-width: 350px;
+      margin-top: 15px;
+    }
+
+    footer h4 {
+      margin-bottom: 18px;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      margin-bottom: 10px;
+      color: #888;
+      font-size: 14px;
+    }
+
+    footer li a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #292929;
+      padding-top: 20px;
+      text-align: center;
+      color: #666;
+      font-size: 13px;
+    }
+
+    /* =========================
+       WHATSAPP
+    ========================== */
+
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+      z-index: 999;
+      box-shadow: 0 8px 25px rgba(0,0,0,.2);
+    }
+
+    /* =========================
+       MODAL
+    ========================== */
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.7);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-box {
+      background: white;
+      max-width: 450px;
+      width: 100%;
+      border-radius: 15px;
+      padding: 30px;
+      position: relative;
+      animation: modalIn .25s ease;
+    }
+
+    @keyframes modalIn {
+      from {
+        transform: scale(.9);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 18px;
+      border: none;
+      background: none;
+      font-size: 25px;
+    }
+
+    .modal-box h2 {
+      margin-bottom: 10px;
+    }
+
+    .modal-box p {
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 950px) {
+
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 25px;
+        display: none;
+        border-bottom: 1px solid #eee;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .container {
+        width: 92%;
+      }
+
+      .hero {
+        min-height: 580px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .feature-grid,
+      .category-grid,
+      .product-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 65px 0;
+      }
+
+      .section-header {
+        display: block;
+      }
+
+      .section-header h2 {
+        margin-bottom: 10px;
+      }
+
+      .category {
+        height: 260px;
+      }
+
+      .product-image {
+        height: 280px;
+      }
+
+      .promo {
+        width: 92%;
+        padding: 40px 25px;
+        min-height: 400px;
+      }
+
+      .promo h2 {
+        font-size: 35px;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+        background: transparent;
+        gap: 10px;
+      }
+
+      .newsletter-form input,
+      .newsletter-form button {
+        height: 50px;
+        border-radius: 6px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header>
+
+    <div class="container navbar">
+
+      <a href="#" class="logo">
+        SEGIRU<span>.</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#products">Shop</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+
+        <button class="cart-btn" onclick="openCart()">
+          🛒
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <button class="menu-btn" onclick="toggleMenu()">
+          ☰
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="hero" id="home">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <span class="hero-label">
+          New Collection 2026
+        </span>
+
+        <h1>
+          Step Into Your Style.
+        </h1>
+
+        <p>
+          Discover premium footwear designed for comfort,
+          confidence and everyday style. Find your perfect
+          pair at Segiru Shoe Store.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#products" class="btn btn-primary">
+            Shop Collection
+          </a>
+
+          <a href="#categories" class="btn btn-light">
+            Explore Categories
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FEATURES
+  ========================== -->
+
+  <section class="features">
+
+    <div class="container feature-grid">
+
+      <div class="feature">
+
+        <div class="feature-icon">🚚</div>
+
+        <div>
+          <h4>Fast Delivery</h4>
+          <p>Reliable delivery across Nigeria</p>
+        </div>
+
+      </div>
+
+      <div class="feature">
+
+        <div class="feature-icon">✓</div>
+
+        <div>
+          <h4>Quality Products</h4>
+          <p>Carefully selected footwear</p>
+        </div>
+
+      </div>
+
+      <div class="feature">
+
+        <div class="feature-icon">↩</div>
+
+        <div>
+          <h4>Easy Returns</h4>
+          <p>Simple and convenient process</p>
+        </div>
+
+      </div>
+
+      <div class="feature">
+
+        <div class="feature-icon">🔒</div>
+
+        <div>
+          <h4>Secure Shopping</h4>
+          <p>Your information stays protected</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CATEGORIES
+  ========================== -->
+
+  <section class="section" id="categories">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <div>
+          <h2>Shop by Category</h2>
+        </div>
+
+        <p>
+          Find the right footwear for your lifestyle,
+          from everyday sneakers to sophisticated formal shoes.
+        </p>
+
+      </div>
+
+      <div class="category-grid">
+
+        <a href="#products" class="category">
+
+          <img
+            src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=900&q=80"
+            alt="Sneakers"
+          >
+
+          <div class="category-overlay">
+            <h3>Sneakers</h3>
+          </div>
+
+        </a>
+
+
+        <a href="#products" class="category">
+
+          <img
+            src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=900&q=80"
+            alt="Formal shoes"
+          >
+
+          <div class="category-overlay">
+            <h3>Formal</h3>
+          </div>
+
+        </a>
+
+
+        <a href="#products" class="category">
+
+          <img
+            src="https://images.unsplash.com/photo-1603487742131-4160ec999306?auto=format&fit=crop&w=900&q=80"
+            alt="Casual shoes"
+          >
+
+          <div class="category-overlay">
+            <h3>Casual</h3>
+          </div>
+
+        </a>
+
+
+        <a href="#products" class="category">
+
+          <img
+            src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=900&q=80"
+            alt="Running shoes"
+          >
+
+          <div class="category-overlay">
+            <h3>Sports</h3>
+          </div>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PRODUCTS
+  ========================== -->
+
+  <section class="section products" id="products">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <div>
+          <h2>Featured Collection</h2>
+        </div>
+
+        <p>
+          Explore some of our most popular footwear.
+        </p>
+
+      </div>
+
+
+      <div class="product-grid">
+
+        <!-- PRODUCT 1 -->
+
+        <div class="product-card">
+
+          <div class="product-image">
+
+            <span class="badge">NEW</span>
+
+            <img
+              src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80"
+              alt="Air Runner Pro"
+            >
+
+          </div>
+
+          <div class="product-info">
+
+            <span class="product-category">
+              Sneakers
+            </span>
+
+            <h3>Air Runner Pro</h3>
+
+            <div class="rating">
+              ★★★★★
+            </div>
+
+            <div class="product-bottom">
+
+              <span class="price">
+                ₦85,000
+              </span>
+
+              <button
+                class="add-cart"
+                onclick="addToCart('Air Runner Pro', 85000)"
+              >
+                Add to Cart
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- PRODUCT 2 -->
+
+        <div class="product-card">
+
+          <div class="product-image">
+
+            <span class="badge">HOT</span>
+
+            <img
+              src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80"
+              alt="Classic Leather"
+            >
+
+          </div>
+
+          <div class="product-info">
+
+            <span class="product-category">
+              Formal
+            </span>
+
+            <h3>Classic Leather</h3>
+
+            <div class="rating">
+              ★★★★★
+            </div>
+
+            <div class="product-bottom">
+
+              <span class="price">
+                ₦95,000
+              </span>
+
+              <button
+                class="add-cart"
+                onclick="addToCart('Classic Leather', 95000)"
+              >
+                Add to Cart
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product-card">
+
+          <div class="product-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=800&q=80"
+              alt="Street Flex"
+            >
+
+          </div>
+
+          <div class="product-info">
+
+            <span class="product-category">
+              Casual
+            </span>
+
+            <h3>Street Flex</h3>
+
+            <div class="rating">
+              ★★★★☆
+            </div>
+
+            <div class="product-bottom">
+
+              <span class="price">
+                ₦72,000
+              </span>
+
+              <button
+                class="add-cart"
+                onclick="addToCart('Street Flex', 72000)"
+              >
+                Add to Cart
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- PRODUCT 4 -->
+
+        <div class="product-card">
+
+          <div class="product-image">
+
+            <span class="badge">SALE</span>
+
+            <img
+              src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=800&q=80"
+              alt="Velocity Sport"
+            >
+
+          </div>
+
+          <div class="product-info">
+
+            <span class="product-category">
+              Sports
+            </span>
+
+            <h3>Velocity Sport</h3>
+
+            <div class="rating">
+              ★★★★★
+            </div>
+
+            <div class="product-bottom">
+
+              <span class="price">
+                ₦79,000
+              </span>
+
+              <button
+                class="add-cart"
+                onclick="addToCart('Velocity Sport', 79000)"
+              >
+                Add to Cart
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PROMOTION
+  ========================== -->
+
+  <section class="promo">
+
+    <div class="promo-content">
+
+      <span class="hero-label">
+        Limited Offer
+      </span>
+
+      <h2>
+        Your next favorite pair is waiting.
+      </h2>
+
+      <p>
+        Get selected footwear at special prices
+        while stocks last.
+      </p>
+
+      <a href="#products" class="btn btn-primary">
+        Shop Now
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       ABOUT
+  ========================== -->
+
+  <section class="section" id="about">
+
+    <div class="container">
+
+      <div class="section-header">
+
+        <div>
+          <h2>Why Segiru?</h2>
+        </div>
+
+        <p>
+          We believe great footwear should combine
+          comfort, durability and personal style.
+        </p>
+
+      </div>
+
+      <div class="feature-grid">
+
+        <div class="feature">
+
+          <div class="feature-icon">👟</div>
+
+          <div>
+            <h4>Modern Designs</h4>
+            <p>
+              Stylish footwear for modern lifestyles.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="feature">
+
+          <div class="feature-icon">💎</div>
+
+          <div>
+            <h4>Premium Quality</h4>
+            <p>
+              Products selected with quality in mind.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="feature">
+
+          <div class="feature-icon">❤️</div>
+
+          <div>
+            <h4>Customer First</h4>
+            <p>
+              We care about your shopping experience.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="feature">
+
+          <div class="feature-icon">🇳🇬</div>
+
+          <div>
+            <h4>Made for Nigeria</h4>
+            <p>
+              Shopping designed for customers in Nigeria.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       NEWSLETTER
+  ========================== -->
+
+  <section class="newsletter" id="contact">
+
+    <div class="container">
+
+      <h2>Stay in the Loop</h2>
+
+      <p>
+        Subscribe for new arrivals, exclusive offers and updates.
+      </p>
+
+      <form
+        class="newsletter-form"
+        onsubmit="subscribeUser(event)"
+      >
+
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email address"
+          required
+        >
+
+        <button type="submit">
+          Subscribe
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+
+          <div class="logo">
+            SEGIRU<span>.</span>
+          </div>
+
+          <p>
+            Premium footwear, modern style and comfortable
+            steps for everyday life.
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <h4>Shop</h4>
+
+          <ul>
+
+            <li>
+              <a href="#products">Sneakers</a>
+            </li>
+
+            <li>
+              <a href="#products">Formal Shoes</a>
+            </li>
+
+            <li>
+              <a href="#products">Casual Shoes</a>
+            </li>
+
+            <li>
+              <a href="#products">Sports Shoes</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <div>
+
+          <h4>Company</h4>
+
+          <ul>
+
+            <li>
+              <a href="#about">About Us</a>
+            </li>
+
+            <li>
+              <a href="#">Our Story</a>
+            </li>
+
+            <li>
+              <a href="#">Careers</a>
+            </li>
+
+            <li>
+              <a href="#">Privacy Policy</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <div>
+
+          <h4>Contact</h4>
+
+          <ul>
+
+            <li>📍 Nigeria</li>
+
+            <li>📞 +234 800 000 0000</li>
+
+            <li>✉️ hello@segiru.com</li>
+
+            <li>Mon - Sat: 9AM - 6PM</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        © 2026 Segiru Shoe Store. All rights reserved.
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       WHATSAPP
+  ========================== -->
+
+  <a
+    class="whatsapp"
+    href="https://wa.me/2348000000000"
+    target="_blank"
+    aria-label="Chat with Segiru on WhatsApp"
+  >
+    ☎
+  </a>
+
+
+  <!-- =========================
+       CART MODAL
+  ========================== -->
+
+  <div class="modal" id="cartModal">
+
+    <div class="modal-box">
+
+      <button
+        class="close-modal"
+        onclick="closeCart()"
+      >
+        ×
+      </button>
+
+      <h2>Your Cart</h2>
+
+      <p id="cartMessage">
+        Your cart is currently empty.
+      </p>
+
+      <div id="cartItems"></div>
+
+      <button
+        class="btn btn-primary"
+        onclick="checkout()"
+      >
+        Checkout
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    /* =========================
+       MOBILE MENU
+    ========================== */
+
+    function toggleMenu() {
+
+      const nav = document.getElementById("navLinks");
+
+      nav.classList.toggle("active");
+
+    }
+
+
+    /* =========================
+       CART
+    ========================== */
+
+    let cart = [];
+
+
+    function addToCart(name, price) {
+
+      cart.push({
+        name: name,
+        price: price
+      });
+
+      updateCart();
+
+      alert(name + " has been added to your cart.");
+
+    }
+
+
+    function updateCart() {
+
+      const cartCount =
+        document.getElementById("cartCount");
+
+      const cartItems =
+        document.getElementById("cartItems");
+
+      const cartMessage =
+        document.getElementById("cartMessage");
+
+
+      cartCount.textContent = cart.length;
+
+
+      if (cart.length === 0) {
+
+        cartMessage.textContent =
+          "Your cart is currently empty.";
+
+        cartItems.innerHTML = "";
+
+        return;
+
+      }
+
+
+      cartMessage.textContent =
+        cart.length + " item(s) in your cart.";
+
+
+      cartItems.innerHTML = cart.map(function(item, index) {
+
+        return `
+          <div style="
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:12px 0;
+            border-bottom:1px solid #eee;
+          ">
+
+            <div>
+              <strong>${item.name}</strong>
+              <br>
+              ₦${item.price.toLocaleString()}
+            </div>
+
+            <button
+              onclick="removeItem(${index})"
+              style="
+                border:none;
+                background:#ffecec;
+                color:#e63946;
+                padding:6px 10px;
+                border-radius:5px;
+              "
+            >
+              Remove
+            </button>
+
+          </div>
+        `;
+
+      }).join("");
+
+    }
+
+
+    function removeItem(index) {
+
+      cart.splice(index, 1);
+
+      updateCart();
+
+    }
+
+
+    function openCart() {
+
+      document
+        .getElementById("cartModal")
+        .classList.add("active");
+
+    }
+
+
+    function closeCart() {
+
+      document
+        .getElementById("cartModal")
+        .classList.remove("active");
+
+    }
+
+
+    /* =========================
+       CHECKOUT
+    ========================== */
+
+    function checkout() {
+
+      if (cart.length === 0) {
+
+        alert("Your cart is empty.");
+
+        return;
+
+      }
+
+
+      let message =
+        "Hello Segiru Shoe Store! I would like to order:%0A%0A";
+
+
+      cart.forEach(function(item) {
+
+        message +=
+          "• " +
+          item.name +
+          " - ₦" +
+          item.price.toLocaleString() +
+          "%0A";
+
+      });
+
+
+      const whatsappNumber =
+        "2348000000000";
+
+
+      window.open(
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        message,
+        "_blank"
+      );
+
+    }
+
+
+    /* =========================
+       NEWSLETTER
+    ========================== */
+
+    function subscribeUser(event) {
+
+      event.preventDefault();
+
+
+      const email =
+        document.getElementById("email").value;
+
+
+      alert(
+        "Thank you! " +
+        email +
+        " has been subscribed."
+      );
+
+
+      document
+        .getElementById("email")
+        .value = "";
+
+    }
+
+
+    /* =========================
+       CLOSE MODAL WHEN CLICKING
+       OUTSIDE
+    ========================== */
+
+    document
+      .getElementById("cartModal")
+      .addEventListener("click", function(event) {
+
+        if (event.target === this) {
+
+          closeCart();
+
+        }
+
+      });
+
+
+    /* =========================
+       CLOSE MOBILE MENU
+    ========================== */
+
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+          document
+            .getElementById("navLinks")
+            .classList.remove("active");
+
+        });
+
+      });
+
+  </script>
+
+</body>
+</html>
